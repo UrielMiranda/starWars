@@ -1,0 +1,9 @@
+<div>
+  <form ng-submit="cardinfo.doSearch()">
+    <input type="text" ng-model="cardinfo.name">
+    <button name="button">Buscar</button>
+  </form>
+  <div ng-repeat="id in cardinfo.characters">
+    {{ id.name }}
+  </div>
+</div>

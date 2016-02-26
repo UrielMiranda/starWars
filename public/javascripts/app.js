@@ -2,8 +2,8 @@
 'use strict';
 
  angular.module("myapp",['ngResource'])
-.directive("cardCharacter", cardCharacter)
-.factory('starWarSearch',starWarSearch);
+ .directive("cardCharacter", cardCharacter)
+ .factory('starWarSearch',starWarSearch);
 
  starWarSearch.$inject = ['$resource'];
  function starWarSearch($resource){
@@ -36,8 +36,8 @@ function cardController(starWarSearch){
     starWarSearch.get({'id': cardinfo.name})
     .$promise
       .then(function(response){
-        cardinfo.characters = response.results[0];
-        console.log(response.results[0]);
+        cardinfo.characters = response.results;
+        console.log(response.results);
       });
   }
 }
